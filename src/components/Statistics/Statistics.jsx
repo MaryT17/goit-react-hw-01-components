@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types'; 
-import css from './Statistics.css';
+import css from './Statistics.module.css';
 
 export const Statistics = ({ title, stats }) => { 
     // Generate Random Color
 const generateRandomColor = () => { 
-    return `rgb(${Math.floor(Math.random() * 256)}, $(Math.floor( 
+    return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor( 
         Math.random() * 256 
-    )), ${Math.floor(Math.random() * 256)})`;
+    )}, ${Math.floor(Math.random() * 256)})`;
 };
 
 return (
     <section className={css.statistics}>
-        {title && <h2 className={css.title}>{title}</h2>}
-
-    <ul className={css.statlist}>
+        {/* {title && <h2 className={css.title}>{title}</h2>} */}
+        {title ? <h2 className={css.title}>{title}</h2> : null}
+    <ul className={css.statList}>
         {stats.map(stat => (
             <li 
                 className={css.item} 
